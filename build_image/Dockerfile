@@ -1,4 +1,5 @@
-FROM maven:latest
+FROM java:8
+FROM maven:alpine
 
 RUN apt-get update
 RUN apt-get install git -y
