@@ -1,12 +1,11 @@
 version: '3'
 
 services:
-  app:
+  build_service:
     build: ./build_image
-    container_name: "app"
+    container_name: "build_service"
     volumes:
       - ./app:/tmp/boxfuse-sample-java-war-hello/target
-
 
   web:
     image: "tomcat:alpine"
@@ -14,3 +13,5 @@ services:
       - "8080:8080"
     volumes:
       - ./app/hello-1.0.war:/usr/local/tomcat/webapps/hello-1.0.war
+    depends_on:
+      - build_service
