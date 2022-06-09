@@ -5,7 +5,7 @@ services:
     build: ./build_image
     container_name: "app"
     volumes:
-      - ./app/hello-1.0.war:/tmp/boxfuse-sample-java-war-hello/target/hello-1.0.war
+      - ./app:/tmp/boxfuse-sample-java-war-hello/target
 
 
   web:
